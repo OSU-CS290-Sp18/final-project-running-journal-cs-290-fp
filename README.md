@@ -1,4 +1,4 @@
-# final-project-running-journal-cs-290-fp
+# final-project-running-journal-cs-290
 **Assignment and Code Blog entry due at 11:59pm on Monday, 6/15/2018**
 
 **Demo due by 5:00pm on Friday, 6/15/2018**
@@ -18,6 +18,18 @@ The goal of this assignment develop a complete web app utilizing all tools taugh
   * Might add graph functionality
 
 ## 2. The How
+
+This is the process by which the assignment will get completed. Basically, I will go through developing this website by way of emulating the format of this term:
+
+  * First, I will design the basic layout of the page, edit, iterate, and officially determine what the website will look like, hardcoded pieces and all.
+
+  * Second, I will complete the functionality of the page via client-side JS. This will include the input of content via large pop-up modal, inclusion into page upon confirmation of text, editing of previously input entries, deletion of entries, searching of entries, and so on (maybe a sort function).
+
+  * Third, I will work on the NodeJS server stuff, but this will be edited when doing the next step
+
+  * Fourth, I'll templatize all aspect of my page with handlebars
+
+  * Lastly, I'll add database functionality
 
 
 
