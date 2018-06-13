@@ -1,4 +1,4 @@
-# final-project-running-journal-cs-290
+# final-project-cs-290
 **Assignment and Code Blog entry due at 11:59pm on Monday, 6/15/2018**
 
 **Demo due by 5:00pm on Friday, 6/15/2018**
