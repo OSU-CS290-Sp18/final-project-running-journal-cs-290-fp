@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <title>This is my website</title>
+ <link rel="stylesheet" href="/style.css" media="screen">
 
-  <meta charset="utf-8">
-  <title>Forward Progress: Log your Run</title>
+   <!-- This script incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+   <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
+   <!-- <script src="/entryTemplate.js" charset="utf-8" defer></script> -->
 
-  <!-- This is a stylesheet that includes the font I'll decide later -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="/style.css" media="screen">
-
-  <!-- This script incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
-  <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
-  <!-- <script src="/entryTemplate.js" charset="utf-8" defer></script> -->
-
-  <script src="/index.js" charset="utf-8" defer></script>
-
+   <script src="/index.js" charset="utf-8" defer></script>
 </head>
-
 <body>
-  <header>
-      <a href="#"><h1 class="site-title"><i class="fas fa-child"></i> forward progress</h1></a>
 
+<div class="header">
+  <h2>Forward Progress</h2>
+</div>
 
-  </header>
-
-  <main class="entry-container">
-
-    <article class="entry">
-      <div class="entry-icon">
-        <i class="fas fa-edit"></i>
-      </div>
-      <div class="twit-content">
-        <p class="entry-title-attribution">
-          <a href="#">Monday Run - May 8, 2018</a>
-        </p>
-        <p class="entry-preview-text">
-          Today I went for a run in on the Cascade Head tra...
-        </p>
-      </div>
-    </article>
-
-
-  </main>
-
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>My first Run</h2>
+      <h5>Jun 7, 2018</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Miles Run: 2.1</p>
+      <p>This was my first run. It was horseshit.</p>
+    </div>
+    <div class="card">
+      <h2>My Second Run</h2>
+      <h5>Jun 9, 2019</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Miles Run: 2.4</p>
+      <p>My second run was also horseshit.</p>
+    </div>
+  </div>
 
 
 
-    <button type="button" id="create-entry-button"><i class="fas fa-edit"></i></button>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About My Blog</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>This is my running blog. I will be using it to keep track of my progress.</p>
+    </div>
+    <div class="card">
+      <h3>Running photos</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
 
 </body>
-
-
 </html>

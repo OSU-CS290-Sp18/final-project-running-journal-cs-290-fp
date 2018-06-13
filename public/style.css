@@ -1,82 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
 body {
-  font-family: Roboto, Helvetica, sans-serif;
-  margin: 0;
-  background-color: #eee;
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
 }
 
-a {
-  text-decoration: none;
-  color: #343434;
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
 }
 
-a:hover,
-a:focus {
-  color: #319df6;
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 50%;
+    margin-left: 15%;
 }
 
-a:focus {
-  outline: none;
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
 }
 
-.site-title {
-  margin: 0;
-  padding: 10px 20px;
-  font-size: 30px;
-  font-weight: 100;
-  background-color: #32CD32;
-  color: #fff;
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
 }
 
-
-.entry-container {
-  margin: 50px 10%;
-  display: flex;
-  flex-wrap: wrap;
+/* Add a card effect for articles */
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
 }
 
-.entry {
-  flex: 0 1 28%;
-  display: flex;
-  margin: 2px;
-  padding: 20px;
-  border: 1px solid #dadada;
-  border-radius: 2px;
-  background-color: #fff;
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.hidden {
-  display: none;
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
 }
 
-
-
-
-#create-entry-button {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  height: 60px;
-  width: 60px;
-  border: none;
-  border-radius: 30px;
-  font-size: 30px;
-  background-color: #319df6;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-#create-entry-button:hover,
-#create-entry-button:focus {
-  right: 27px;
-  bottom: 27px;
-  height: 66px;
-  width: 66px;
-  border-radius: 33px;
-  font-size: 36px;
-  background-color: #32CD32;
-}
-
-#create-twit-button:focus {
-  outline: none;
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+        margin-left: 0;
+    }
 }
