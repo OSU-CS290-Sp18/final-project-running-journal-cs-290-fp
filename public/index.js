@@ -39,20 +39,20 @@ function ModalAcceptClick() {
   var postTitle = document.getElementById('log-text-input').value;
   var postEntry = document.getElementById('log-attribution-input').value;
   var postMilage = document.getElementById('log-miles-input').value;
-//var postDate = document.getElementById('log-date-input').value;
-  if (postTitle && postEntry && postMilage) {
+  var postDate = document.getElementById('log-date-input').value;
+  if (postTitle && postEntry && postMilage && postDate) {
 
     allPosts.push({
       title: postTitle,
       text: postEntry,
-      milage: postMilage
-      //date: postDate
+      milage: postMilage,
+      date: postDate
     });
 
     hideModal();
 
   } else {
-    alert('You must specify both the text and the author of the twit!');
+    alert('You must specify the title, date, entry and milage');
   }
 }
 
