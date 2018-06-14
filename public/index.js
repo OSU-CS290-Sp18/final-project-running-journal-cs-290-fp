@@ -2,11 +2,11 @@
 
 function showModal() {
 
-  var modalBackdrop = document.getElementById('modal-backdrop');
-  var createModal = document.getElementById('create-log-modal');
+  var modalBackdrop = document.getElementById('modal-backdrop'); //variable referencing modal backdrop
+  var createModal = document.getElementById('create-log-modal'); //The actual entry modal
 
   // Show the modal and its backdrop.
-  modalBackdrop.classList.remove('hidden');
+  modalBackdrop.classList.remove('hidden'); //
   createModal.classList.remove('hidden');
 
 }
@@ -81,4 +81,3 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-
