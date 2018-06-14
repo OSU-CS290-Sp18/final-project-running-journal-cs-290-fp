@@ -105,6 +105,7 @@ app.get('*', function (req, res) {
   res.status(404).render('404');
 });
 */
+
 app.use('*', function (req, res) {
   res.status(404).render('404');
 });
