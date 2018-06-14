@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
- <title>This is my website</title>
- <link rel="stylesheet" href="/style.css" media="screen">
 
-   <!-- This script incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
-   <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" defer></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
-   <!-- <script src="/entryTemplate.js" charset="utf-8" defer></script> -->
-
-   <script src="/index.js" charset="utf-8" defer></script>
-</head>
-<body>
-
-<div class="header">
-  <h2>Forward Progress</h2>
-</div>
 
 <div class="row">
   <div class="leftcolumn">
@@ -25,6 +8,25 @@
     {{/each}}
 
   </div>
+</div>
+
+<div class="rightcolumn">
+  <div class="card">
+    <h2>About My Blog</h2>
+    <div class="fakeimg" style="height:100px;">Image</div>
+    <p>This is my running blog. I will be using it to keep track of my progress.</p>
+  </div>
+  <div class="card">
+    <h3>Running photos</h3>
+    <div class="fakeimg">Image</div><br>
+    <div class="fakeimg">Image</div><br>
+    <div class="fakeimg">Image</div>
+  </div>
+  <div class="card">
+    <h3>Follow Me</h3>
+    <p>Some text..</p>
+  </div>
+</div>
 </div>
 
 <div class="footer">
