@@ -81,3 +81,9 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+
+
+//Developing a twit with handlebars
+
+function insert
