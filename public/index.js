@@ -49,6 +49,7 @@ function ModalAcceptClick() {
       date: postDate
     });
 
+    updatePage();
     hideModal();
 
   } else {
@@ -92,9 +93,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
 //Developing a twit with handlebars
 
-function insertNewEntry(title, text, miles, data){
+function insertNewEntry(title, text, miles, date){
   var entryTemplate = Handlebars.templates.entryCard;
-  var newEntryHTML = entryTemplate({
+  var newEntryHTML = entryCardTemplate({
     text: text,
     miles: miles,
     date: date,
@@ -119,7 +120,7 @@ function updatePage(){
     *
     */
     allPosts.forEach(function (entry){
-      insertNewEntry(entry.text, entry.date, entry.title, entry.miles);
+      insertNewEntry(entry.title, entry.text, entry.miles, entry.date);
     });
 
 
