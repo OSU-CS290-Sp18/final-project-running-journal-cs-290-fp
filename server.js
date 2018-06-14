@@ -9,8 +9,19 @@
 var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
-//var fs = require('fs');
+var bodyParser = require('body-parser');
+var MongoClient = require('mongodb').MangoClient;
+
+var mongoHost = process.env.MONGO_HOST;
+var mongoPort = process.env.MONGO_PORT || '27017';
+var mongoUsername = process.env.MONGO_USERNAME;
+var mongoPassword = process.env.MONGO_PASSWORD;
+var mongoDBName = process.env.MONGO_DB_NAME;
+
+
+
 var app = express();
+
 
 
 

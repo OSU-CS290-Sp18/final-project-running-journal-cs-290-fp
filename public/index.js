@@ -91,7 +91,7 @@ function insertNewEntry(title, text, miles, data){
   var newEntryHTML = entryTemplate({
     text: text,
     miles: miles,
-    date: date;
+    date: date,
     title: title
   });
   var entryContainer = document.querySelector('.leftcolumn');
