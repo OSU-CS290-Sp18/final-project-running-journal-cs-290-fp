@@ -54,41 +54,35 @@ app.get('/twit/:n', function(req,res,next){
 });
 
 
-
+*/
 app.get('/test', function (req, res, next){
-  res.render('twitPage', {
-    name: "Twitty",
+  res.render('entryPage', {
+    name: "entries",
     twits: [
       {
-        text: "A body in motion must remain in motion unless acted upon by an outside force.",
-        author: "NewtonRulez"
+        title: "My first run"
+        text: "this is my first run text",
+        miles:"3",
+        date: "June 4, 2018"
+
       },
       {
-        text: "Huh?",
-        author: "ConfusedTweeterer"
+        title: "My second run"
+        text: "this is my second run text",
+        miles:"1",
+        date: "June 5, 2018"
       },
       {
-        text: "Why did the calf cross the road?",
-        author: "Setup"
+        title: "My third run"
+        text: "this is my third run text",
+        miles:"4",
+        date: "June 6, 2018"
       },
-      {
-        text: "To get to the udder side!",
-        author: "Punchline"
-      },
-      {
-        text: "Any questions about flexboxes?",
-        author: "Hess"
-      },
-      {
-        text: "Friendly reminder: your taxes were due yesterday.",
-        author: "TheIRS"
-      }
     ]
   })
-
 })
 
-
+/*
 
 app.get('*', function (req, res) {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
