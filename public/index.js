@@ -45,7 +45,7 @@ function ModalAcceptClick() {
     allPosts.push({
       title: postTitle,
       text: postEntry,
-      milage: postMilage,
+      miles: postMilage,
       date: postDate
     });
 
@@ -86,4 +86,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 //Developing a twit with handlebars
 
-function insert
+function insertNewEntry(title, text, miles, data){
+  var entryTemplate = Handlebars.templates.entryCard;
+  var newEntryHTML = entryTemplate
+}

@@ -60,20 +60,20 @@ app.get('/test', function (req, res, next){
     name: "entries",
     twits: [
       {
-        title: "My first run"
+        title: "My first run",
         text: "this is my first run text",
         miles:"3",
         date: "June 4, 2018"
 
       },
       {
-        title: "My second run"
+        title: "My second run",
         text: "this is my second run text",
         miles:"1",
         date: "June 5, 2018"
       },
       {
-        title: "My third run"
+        title: "My third run",
         text: "this is my third run text",
         miles:"4",
         date: "June 6, 2018"
