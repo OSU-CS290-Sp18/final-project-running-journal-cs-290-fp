@@ -58,7 +58,7 @@ app.get('/twit/:n', function(req,res,next){
 app.get('/test', function (req, res, next){
   res.render('entryPage', {
     name: "entries",
-    twits: [
+    entry: [
       {
         title: "My first run",
         text: "this is my first run text",
