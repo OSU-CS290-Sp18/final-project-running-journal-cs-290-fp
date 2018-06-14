@@ -60,5 +60,41 @@
   <h2>Footer</h2>
 </div>
 
+<button type="button" id="create-log">
+  <i class="fa fa-edit"></i>
+</button>
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="create-log-modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Record a Log</h3>
+      <button type="button" class="modal-close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="log-input-element">
+        <label for="log-text-input">Title</label>
+        <textarea id="log-text-input"></textarea>
+      </div>
+      <div class="log-input-element">
+        <label for="log-attribution-input">Description</label>
+        <input type="text" id="log-attribution-input">
+      </div>
+      <div>
+        <div class="log-image"></div>
+        <label for="log-image-input">Photo</label>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="modal-cancel-button">Cancel</button>
+      <button type="button" class="modal-accept-button">Create Log</button>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
