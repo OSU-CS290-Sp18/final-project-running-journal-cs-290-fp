@@ -92,7 +92,7 @@ app.get('*', function (req, res) {
 });
 */
 app.get('*', function (req, res) {
-  res.write('<h1>'+"404: Page not found"+'</h1>');
+  res.status(404).render('404');
 });
 app.listen(port, function () {
   console.log("== Server is listening on port", port);
