@@ -62,7 +62,12 @@ var allPosts = [];
 window.addEventListener('DOMContentLoaded', function () {
 
   // Remember all of the existing twits in an array that we can use for search.
-  var entryElemsCollection = document.getElementsByClassName('blog-posts');
+//  var entryElemsCollection = document.getElementsByClassName('blog-posts');/
+//  for (var i = 0; i < entryElemsCollection.length; i++) {
+//    allPosts.push(parseEntryElem(entryElemsCollection[i]));
+//  }
+
+  var entryElemsCollection = document.getElementsByClassName('card');
   for (var i = 0; i < entryElemsCollection.length; i++) {
     allPosts.push(parseEntryElem(entryElemsCollection[i]));
   }
@@ -95,7 +100,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 function insertNewEntry(title, text, miles, date){
   var entryTemplate = Handlebars.templates.entryCard;
-  var newEntryHTML = entryCardTemplate({
+  var newEntryHTML = entryTemplate ({
     text: text,
     miles: miles,
     date: date,

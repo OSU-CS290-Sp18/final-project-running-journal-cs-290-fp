@@ -72,7 +72,7 @@ app.get('/twit/:n', function(req,res,next){
 app.get('/test', function (req, res, next){
   res.render('entryPage', {
     name: "entries",
-    twits: [
+    entry: [
       {
         title: "My first run",
         text: "this is my first run text",
@@ -106,7 +106,7 @@ app.get('*', function (req, res) {
 });
 */
 app.use('*', function (req, res) {
-  res.write('<h1>'+"404: Page not found"+'</h1>');
+  res.status(404).render('404');
 });
 
 MongoClient.connect(mongoURL, function(err, client) {
