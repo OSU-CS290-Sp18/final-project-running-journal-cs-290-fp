@@ -88,5 +88,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 function insertNewEntry(title, text, miles, data){
   var entryTemplate = Handlebars.templates.entryCard;
-  var newEntryHTML = entryTemplate
+  var newEntryHTML = entryTemplate({
+    text: text,
+    miles: miles,
+    date: date;
+    title: title
+  });
+  var entryContainer = document.querySelector('.leftcolumn');
+  entryContainer.insertAdjacentHTML('beforeend', newEntryHTML);
 }

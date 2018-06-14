@@ -16,7 +16,7 @@ var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;  //export PORT=####
 
 app.get('/', function(req, res){
   res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
