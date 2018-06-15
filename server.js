@@ -95,7 +95,7 @@ app.post('*', function (req, res, next) {
   console.log('someone is trying to put in info');
   if(req.body && req.body.text && req.body.date && req.body.miles && req.body.title) {
     var entriesCollection = mongoDB.collection('entries');
-    entriesCollection.updateOne(
+    entriesCollection.insertOne(
       { title: req.body.title,
         text: req.body.text,
         date: req.body.date,
@@ -105,11 +105,6 @@ app.post('*', function (req, res, next) {
           res.status(500).send("Error inserting entry.")
         } else {
           console.log("== mongo insert result:", result);
-          if (result.matchedCount > 0) {
-            res.status(200).end();
-          } else {
-            next();
-          }
         }
       }
     );
