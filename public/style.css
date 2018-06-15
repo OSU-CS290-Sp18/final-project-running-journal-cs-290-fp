@@ -123,7 +123,7 @@ make the two columns stack on top of each other instead of next to each other */
   min-width: 350px;
   min-height: 300px;
   margin: 40px auto;
-  background-color: #fff;
+  background-color: rgb(83, 168, 83);
   border-radius: 15px;
 }
 
@@ -170,11 +170,16 @@ make the two columns stack on top of each other instead of next to each other */
   flex: 6 200px;
   padding: 8px;
   font-size: 20px;
-  border: 1px solid #aaa;
+  border: 1px solid rgb(178, 212, 178);
 }
 
 .log-input-element textarea {
   min-height: 64px;
+  background-color: rgb(173, 216, 173);
+}
+
+.log-input-element input{
+  background-color: rgb(173, 216, 173);
 }
 
 .modal-footer {
@@ -195,16 +200,20 @@ make the two columns stack on top of each other instead of next to each other */
 }
 
 .modal-footer .modal-cancel-button:hover {
-  background-color: #eee;
+  background-color: rgb(173, 216, 173);
+}
+
+.modal-footer .modal-cancel-button {
+  background-color: rgb(223, 236, 223);
 }
 
 .modal-footer .modal-accept-button {
-  background-color: #319df6;
+  background-color: #379683;
   color: #fff;
 }
 
 .modal-footer .modal-accept-button:hover {
-  background-color: #087dde;
+  background-color: #379683;
 }
 
 .error-container {
