@@ -118,6 +118,22 @@ app.post('*', function (req, res, next) {
   }
 });
 
+app.delete('*', function(req, res, next) {
+  console.log('someon is trying to delete all the info')
+  if(req.body) {
+    var entriesCollection = mongoDB.collection('entries');
+    entriesCollection.deleteMany({},
+      function (err, result) {
+        if (err) {
+          res.status(500).send("Error deleting entries.")
+        } else {
+          console.log("== mongo delete result:", result);
+        }
+      }
+    );
+  }
+});
+
 app.use('*', function (req, res) {
   res.status(404).render('404');
 });

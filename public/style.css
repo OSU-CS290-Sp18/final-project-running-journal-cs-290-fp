@@ -117,6 +117,15 @@ make the two columns stack on top of each other instead of next to each other */
   overflow: scroll;
 }
 
+  #clear-log-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
 .modal-dialog {
   width: auto;
   max-width: 600px;
@@ -289,3 +298,45 @@ make the two columns stack on top of each other instead of next to each other */
   text-decoration: none;
   text-decoration-color: none;
 }
+
+#clear-log {
+  position: fixed;
+  left: 45px;
+  top: 350px;
+  height: 60px;
+  width: 60px;
+  /*position: relative;
+  left: 45px;
+  bottom: -1400%;
+  width:60px;
+  height:60px;*/
+  border: solid;
+  border-radius: 30px;
+  font-size: 30px;
+  background-color:  #379683;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#clear-log:hover,
+#clear-log:focus {
+  left:44px;
+  top: 351px;
+  height: 66px;
+  width:66px;
+  /*
+  left: 44px;
+  top: 279px;
+  height: 66px;
+  width: 66px; 
+  */
+  border-radius: 33px;
+  font-size: 36px;
+  background-color:#05386b;
+}
+
+#clear-log:focus {
+  outline: none;
+}
+
