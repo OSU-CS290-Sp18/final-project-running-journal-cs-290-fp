@@ -81,7 +81,7 @@ function ModalAcceptClick() {
 
     request.addEventListener('load', function (event) {
       if (event.target.status === 200) {
-        var entryTemplate = Handlebars.templates.entryCard;
+        var entryCardTemplate = Handlebars.templates.entryCard;
         var newEntryCardHTML = entryCardTemplate({
           text: postEntry,
           miles: postMilage,
@@ -98,6 +98,7 @@ function ModalAcceptClick() {
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(requestBody);
     hideModal();
+    updatePage();
 
   } else {
     alert('You must specify the title, date, entry and milage');
