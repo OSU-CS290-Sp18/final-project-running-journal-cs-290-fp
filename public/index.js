@@ -60,8 +60,8 @@ function ModalAcceptClick() {
 
 function ModalAcceptClick() {
 
-  var postTitle = document.getElementById('log-text-input').value.trim();
-  var postEntry = document.getElementById('log-attribution-input').value.trim();
+  var postEntry = document.getElementById('log-text-input').value.trim();
+  var postTitle = document.getElementById('log-attribution-input').value.trim();
   var postMilage = document.getElementById('log-miles-input').value.trim();
   var postDate = document.getElementById('log-date-input').value.trim();
   if (postTitle && postEntry && postMilage && postDate) {
@@ -70,7 +70,7 @@ function ModalAcceptClick() {
   //  var entryID = getId();
   //  var url = "/people/" + personID + "/addPhoto";
 
-    request.open("POST", "/test3");
+    request.open("POST", "/");
 
     var requestBody = JSON.stringify({
       title: postTitle,
