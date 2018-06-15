@@ -24,6 +24,28 @@ function hideModal() {
 
 }
 
+function showModalClear() {
+
+  var modalBackdrop = document.getElementById('modal-backdrop'); //variable referencing modal backdrop
+  var clearModal = document.getElementById('clear-log-modal'); //The actual entry modal
+
+  // Show the modal and its backdrop.
+  modalBackdrop.classList.remove('hidden'); //
+  clearModal.classList.remove('hidden');
+
+}
+
+function hideModalClear() {
+
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  var clearModal = document.getElementById('clear-log-modal');
+
+  // Hide the modal and its backdrop.
+  modalBackdrop.classList.add('hidden');
+  clearModal.classList.add('hidden');
+
+}
+
 function clearLogInputValues() {
 
   var logInputElems = document.getElementsByClassName('log-input-element');
@@ -33,31 +55,6 @@ function clearLogInputValues() {
   }
 
 }
-
-/*
-function ModalAcceptClick() {
-
-  var postTitle = document.getElementById('log-text-input').value;
-  var postEntry = document.getElementById('log-attribution-input').value;
-  var postMilage = document.getElementById('log-miles-input').value;
-  var postDate = document.getElementById('log-date-input').value;
-  if (postTitle && postEntry && postMilage && postDate) {
-
-    allPosts.push({
-      title: postTitle,
-      text: postEntry,
-      miles: postMilage,
-      date: postDate
-    });
-
-    updatePage();
-    hideModal();
-
-  } else {
-    alert('You must specify the title, date, entry and milage');
-  }
-}*/
-
 
 function getEntryIdFromURL() {
   var path = window.location.pathname;
@@ -117,6 +114,18 @@ function ModalAcceptClick() {
   }
 }
 
+function ClearModalAcceptClick() {
+
+  var request = new XMLHttpRequest();
+
+  request.open("DELETE", "/");
+  request.send();
+  hideModalClear();
+  updatePageClear();
+
+}
+
+
 var allPosts = [];
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -137,6 +146,11 @@ window.addEventListener('DOMContentLoaded', function () {
     createPostButton.addEventListener('click', showModal);
   }
 
+  var createPostButton = document.getElementById('clear-log');
+  if (createPostButton) {
+    createPostButton.addEventListener('click', showModalClear);
+  }
+
   var modalCloseButton = document.querySelector('#create-log-modal .modal-close-button');
   if (modalCloseButton) {
     modalCloseButton.addEventListener('click', hideModal);
@@ -152,8 +166,20 @@ window.addEventListener('DOMContentLoaded', function () {
     modalAcceptButton.addEventListener('click', ModalAcceptClick);
   }
 
+  var modalCloseButton = document.querySelector('#clear-log-modal .modal-close-button');
+  if (modalCloseButton) {
+    modalCloseButton.addEventListener('click', hideModalClear);
+  }
 
+  var modalCancalButton = document.querySelector('#clear-log-modal .modal-cancel-button');
+  if (modalCancalButton) {
+    modalCancalButton.addEventListener('click', hideModalClear);
+  }
 
+  var modalAcceptButton = document.querySelector('#clear-log-modal .modal-accept-button');
+  if (modalAcceptButton) {
+    modalAcceptButton.addEventListener('click', ClearModalAcceptClick);
+  }
 
 });
 
@@ -212,3 +238,34 @@ function parseEntryElem(entryElem) {
   return entry;
 
 }
+/*
+function insertNewClearEntry(title, text, miles, date){
+  var entryTemplate = Handlebars.templates.entryCard;
+  var newEntryHTML = entryTemplate ({
+    text: text,
+    miles: miles,
+    date: date,
+    title: title
+  });
+  var entryContainer = document.querySelector('.leftcolumn');
+  entryContainer.insertAdjacentHTML('beforeend', newEntryHTML);
+}
+*/
+
+function updatePageClear(){
+
+//remove all entries from dom temporarily
+    var entryContainer = document.querySelector('.leftcolumn');
+    if(entryContainer){
+      while(entryContainer.lastChild){
+        entryContainer.removeChild(entryContainer.lastChild);
+      }
+    }
+    console.log(entryContainer);
+    /*
+    *loop through the collection of all twits and add twits back into the dom
+    *
+    */
+
+}
+
