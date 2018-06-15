@@ -37,38 +37,7 @@ app.get('/', function(req, res){
 });
 
 app.use(express.static('public'));
-//var twitData = require("./twitData");
-/*
-app.get('/', function (req, res, next){
-  res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
-});
 
-
-app.get('/', function(req,res){
-  if(twitData) {
-    res.status(200).render('twitPage', {twits: twitData, showButt: true});
-  }
-  else{
-    next();
-  }
-});
-
-app.use(express.static('public'));
-
-app.get('/twit/:n', function(req,res,next){
-  var n = req.params.n;
-    if(twitData[n]){
-
-      res.status(200).render('twitPage', {twits:[twitData[n]], showButt: false});
-
-    }
-    else{
-      next();
-    }
-});
-
-
-*/
 app.get('/test', function (req, res, next){
   res.render('entryPage', {
     name: "entries",
@@ -96,24 +65,15 @@ app.get('/test', function (req, res, next){
   })
 })
 
-/*
-
-app.get('*', function (req, res) {
-  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
-});
-app.get('*', function (req, res) {
-  res.status(404).render('404');
-});
-*/
-
 app.post('*', function (req, res, next) {
+  console.log('someone is trying to put in info');
   if(req.body && req.body.text && req.body.date && req.body.miles && req.body.title) {
     var entriesCollection = mongoDB.collection('entries');
     entriesCollection.updateOne(
-      { title: req.body.title },
-      { text: req.body.text},
-      { date: req.body.date},
-      { miles: req.body.miles},
+      { title: req.body.title ,
+        text: req.body.text,
+        date: req.body.date,
+        miles: req.body.miles},
       function (err, result) {
         if (err) {
           res.status(500).send("Error inserting entry.")
