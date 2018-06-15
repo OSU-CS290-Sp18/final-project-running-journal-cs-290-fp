@@ -36,6 +36,8 @@ app.get('/', function(req, res){
   res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
 });
 
+app.use(bodyParser.json());
+
 app.use(express.static('public'));
 
 app.get('/test', function (req, res, next){
@@ -70,7 +72,7 @@ app.post('*', function (req, res, next) {
   if(req.body && req.body.text && req.body.date && req.body.miles && req.body.title) {
     var entriesCollection = mongoDB.collection('entries');
     entriesCollection.updateOne(
-      { title: req.body.title ,
+      { title: req.body.title,
         text: req.body.text,
         date: req.body.date,
         miles: req.body.miles},
