@@ -235,16 +235,16 @@ make the two columns stack on top of each other instead of next to each other */
 
 
 #create-log {
-  /*position: fixed;
-  left: 30px;
-  bottom: 30px;
+  position: fixed;
+  left: 45px;
+  top: 280px;
   height: 60px;
-  width: 60px;*/
-  position: absolute;
-  left: 7%;
-  bottom: 63%;
+  width: 60px;
+  /*position: relative;
+  left: 45px;
+  bottom: -1400%;
   width:60px;
-  height:60px;
+  height:60px;*/
   border: solid;
   border-radius: 30px;
   font-size: 30px;
@@ -256,10 +256,16 @@ make the two columns stack on top of each other instead of next to each other */
 
 #create-log:hover,
 #create-log:focus {
-  left: 6.8%;
-  bottom: 62.5%;
+  left: 45px;
+  top: -1400px;
   height: 66px;
-  width: 66px;
+  width:66px;
+  /*
+  left: 44px;
+  top: 279px;
+  height: 66px;
+  width: 66px; 
+  */
   border-radius: 33px;
   font-size: 36px;
   background-color:#05386b;
