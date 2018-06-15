@@ -34,6 +34,7 @@ function clearLogInputValues() {
 
 }
 
+/*
 function ModalAcceptClick() {
 
   var postTitle = document.getElementById('log-text-input').value;
@@ -50,6 +51,52 @@ function ModalAcceptClick() {
     });
 
     updatePage();
+    hideModal();
+
+  } else {
+    alert('You must specify the title, date, entry and milage');
+  }
+}*/
+
+function ModalAcceptClick() {
+
+  var postTitle = document.getElementById('log-text-input').value.trim();
+  var postEntry = document.getElementById('log-attribution-input').value.trim();
+  var postMilage = document.getElementById('log-miles-input').value.trim();
+  var postDate = document.getElementById('log-date-input').value.trim();
+  if (postTitle && postEntry && postMilage && postDate) {
+
+    var request = new XMLHttpRequest();
+  //  var entryID = getId();
+  //  var url = "/people/" + personID + "/addPhoto";
+
+    request.open("POST", "/test3");
+
+    var requestBody = JSON.stringify({
+      title: postTitle,
+      text: postEntry,
+      miles: postMilage,
+      date: postDate
+    });
+
+    request.addEventListener('load', function (event) {
+      if (event.target.status === 200) {
+        var entryTemplate = Handlebars.templates.entryCard;
+        var newEntryCardHTML = entryCardTemplate({
+          text: postEntry,
+          miles: postMilage,
+          date: postDate,
+          title: postTitle
+        });
+        var entryContainer = document.querySelector('.leftcolumn');
+        entryContainer.insertAdjacentHTML('beforeend', newEntryCardHTML);
+      } else {
+        alert("Error storing photo: " + event.target.response);
+      }
+    });
+
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(requestBody);
     hideModal();
 
   } else {
