@@ -253,7 +253,7 @@ function insertNewClearEntry(title, text, miles, date){
 */
 
 function updatePageClear(){
-
+    allPosts = [];
 //remove all entries from dom temporarily
     var entryContainer = document.querySelector('.leftcolumn');
     if(entryContainer){

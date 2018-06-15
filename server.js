@@ -119,7 +119,7 @@ app.post('*', function (req, res, next) {
 });
 
 app.delete('*', function(req, res, next) {
-  console.log('someon is trying to delete all the info')
+  console.log('someone is trying to delete all the info')
   if(req.body) {
     var entriesCollection = mongoDB.collection('entries');
     entriesCollection.deleteMany({},
