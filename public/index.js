@@ -89,7 +89,8 @@ function ModalAcceptClick() {
       miles: postMilage,
       date: postDate
     });
-
+    allPosts.push({text:postEntry, title:postTitle ,miles:postMilage ,date:postDate});
+    //insertNewEntry( postTitle,postEntry,postMilage ,postDate);
     request.addEventListener('load', function (event) {
       if (event.target.status === 200) {
         var entryCardTemplate = Handlebars.templates.entryCard;
@@ -109,7 +110,7 @@ function ModalAcceptClick() {
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(requestBody);
     hideModal();
-
+    updatePage();
 
   } else {
     alert('You must specify the title, date, entry and milage');
