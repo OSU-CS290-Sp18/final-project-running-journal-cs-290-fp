@@ -98,7 +98,7 @@ function ModalAcceptClick() {
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(requestBody);
     hideModal();
-    updatePage();
+  
 
   } else {
     alert('You must specify the title, date, entry and milage');
