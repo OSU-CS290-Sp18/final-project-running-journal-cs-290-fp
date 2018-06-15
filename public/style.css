@@ -32,6 +32,7 @@ body {
     padding-left: 35px;
     background-color: #333;
     margin-top: -28%;
+    position: fixed;
     /*padding-right: 75%;*/
 
 }
