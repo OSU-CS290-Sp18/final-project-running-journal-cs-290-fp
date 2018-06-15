@@ -6,7 +6,7 @@
 body {
     font-family: Arial;
     padding: 20px;
-    background: rgb(182, 228, 173);
+    background: #5cdb95;
 }
 
 /* Header/Blog Title */
@@ -14,7 +14,8 @@ body {
     padding: 30px;
     font-size: 40px;
     text-align: center;
-    background: #f1f1f1f1;
+    background: #379683;
+    color:#05386b;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -30,7 +31,7 @@ body {
     float:right;
     width: 30%;
     padding-left: 35px;
-    background: #ddd;
+    background: #edf5e1;
     margin: 2%;
     padding-right: 35px;
 
@@ -52,7 +53,7 @@ body {
 }*/
 /* Add a card effect for articles */
 .card {
-     background-color: #ddd;
+     background-color: #edf5e1;
      padding: 20px;
      margin-top: 20px;
   
