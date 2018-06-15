@@ -106,6 +106,42 @@ app.get('*', function (req, res) {
 });
 */
 
+app.post('*', function (req, res, next) {
+  //var person = req.params.person.toLowerCase();
+  if (req.body && req.body.title && req.body.date && req.body.miles && req.body.text) {
+    var post = {
+      title: req.body.title,
+      date: req.body.date,
+      miles: req.body.miles,
+      text: req.body.text
+    };
+
+   var entriesCollection = mongoDB.collection('entries');
+    entriesCollection.updateOne(
+      { title: req.body.title, 
+        date: req.body.date,
+        miles: req.body.miles,
+        text: req.body.text
+      }
+
+      function (err, result) {
+        if (err) {
+          res.status(500).send("Error inserting entry into DB.")
+        } else {
+          console.log("== mongo insert result:", result);
+          if (result.matchedCount > 0) {
+            res.status(200).end();
+          } else {
+            next();
+          }
+        }
+      }
+    );
+  } else {
+    res.status(400).send("Request needs additional entries.")
+  }
+});
+
 app.use('*', function (req, res) {
   res.status(404).render('404');
 });
