@@ -18,7 +18,7 @@ var mongoUsername = process.env.MONGO_USERNAME;
 var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB_NAME;
 
-var mongoURL = "mongodb://" +
+var mongoURL = "mongodb://" + 
 mongoUsername + ":" + mongoPassword + "@" + mongoHost + ":" + mongoPort + "/" + mongoDBName;
 
 var mongoDB = null;
@@ -94,18 +94,7 @@ app.get('/test', function (req, res, next){
       },
     ]
   })
-});
-
-var entryData = require("./entryData");
-
-app.get('/test2', function (req, res){
-  if(entryData){
-    res.status(200).render('entryPage', {entry: entryData});
-  }
-  else{
-    next();
-  }
-});
+})
 
 /*
 
@@ -118,26 +107,16 @@ app.get('*', function (req, res) {
 */
 
 app.post('*', function (req, res, next) {
-  //var person = req.params.person.toLowerCase();
-  if (req.body && req.body.title && req.body.date && req.body.miles && req.body.text) {
-    var post = {
-      title: req.body.title,
-      date: req.body.date,
-      miles: req.body.miles,
-      text: req.body.text
-    };
-
-   var entriesCollection = mongoDB.collection('entries');
+  if(req.body && req.body.text && req.body.date && req.body.miles && req.body.title) {
+    var entriesCollection = mongoDB.collection('entries');
     entriesCollection.updateOne(
-      { title: req.body.title, 
-        date: req.body.date,
-        miles: req.body.miles,
-        text: req.body.text
-      }
-
+      { title: req.body.title },
+      { text: req.body.text},
+      { date: req.body.date},
+      { miles: req.body.miles},
       function (err, result) {
         if (err) {
-          res.status(500).send("Error inserting entry into DB.")
+          res.status(500).send("Error inserting entry.")
         } else {
           console.log("== mongo insert result:", result);
           if (result.matchedCount > 0) {
@@ -149,7 +128,7 @@ app.post('*', function (req, res, next) {
       }
     );
   } else {
-    res.status(400).send("Request needs additional entries.")
+    res.status(400).send("Request needs a JSON body with caption and photoURL.")
   }
 });
 
