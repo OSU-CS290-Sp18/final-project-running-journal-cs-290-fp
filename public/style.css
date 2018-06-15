@@ -256,8 +256,8 @@ make the two columns stack on top of each other instead of next to each other */
 
 #create-log:hover,
 #create-log:focus {
-  left: 45px;
-  top: -1400px;
+  left: 44px;
+  top: 279px;
   height: 66px;
   width:66px;
   /*
