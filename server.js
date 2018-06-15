@@ -32,7 +32,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 var port = process.env.PORT || 3000;  //export PORT=####
 
-app.get('/', function(req, res){
+app.get('/og', function(req, res){
   res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'))
 });
 
@@ -77,7 +77,7 @@ app.get('/test2', function (req, res){
   }
 });
 
-app.get('/test3', function(req, res, next){
+app.get('/', function(req, res, next){
   var entriesCollection=mongoDB.collection('entries');
   entriesCollection.find().toArray(function(err, entries){
     if (err){
