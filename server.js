@@ -18,7 +18,7 @@ var mongoUsername = process.env.MONGO_USERNAME;
 var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB_NAME;
 
-var mongoURL = "mongodb://" + 
+var mongoURL = "mongodb://" +
 mongoUsername + ":" + mongoPassword + "@" + mongoHost + ":" + mongoPort + "/" + mongoDBName;
 
 var mongoDB = null;
@@ -94,7 +94,18 @@ app.get('/test', function (req, res, next){
       },
     ]
   })
-})
+});
+
+var entryData = require("./entryData");
+
+app.get('/test2', function (req, res){
+  if(entryData){
+    res.status(200).render('entryPage', {entry: entryData});
+  }
+  else{
+    next();
+  }
+});
 
 /*
 
