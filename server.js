@@ -37,8 +37,20 @@ app.get('/og', function(req, res){
 });
 
 app.use(bodyParser.json());
-
+app.get('/', function(req, res, next){
+  var entriesCollection=mongoDB.collection('entries');
+  entriesCollection.find().toArray(function(err, entries){
+    if (err){
+      res.status(500).send("error fetching entries from db");
+    }
+    else{
+      res.status(200).render('entryPage', {entry: entries })
+    }
+  });
+});
 app.use(express.static('public'));
+
+
 
 app.get('/test', function (req, res, next){
   res.render('entryPage', {
@@ -77,17 +89,7 @@ app.get('/test2', function (req, res){
   }
 });
 
-app.get('/', function(req, res, next){
-  var entriesCollection=mongoDB.collection('entries');
-  entriesCollection.find().toArray(function(err, entries){
-    if (err){
-      res.status(500).send("error fetching entries from db");
-    }
-    else{
-      res.status(200).render('entryPage', {entry: entries })
-    }
-  });
-});
+
 
 
 
