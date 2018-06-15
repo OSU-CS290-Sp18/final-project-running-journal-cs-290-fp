@@ -16,6 +16,9 @@ body {
     text-align: center;
     background: #379683;
     color:#05386b;
+    text-shadow: #333;
+    border: solid;
+    border-color: #05386b;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -70,8 +73,10 @@ body {
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: #65ccb8;
     margin-top: 20px;
+    border:solid;
+    border-color: #333;
 }
 
 /* Responsive layout - when the screen is less than 800px wide,
@@ -224,7 +229,7 @@ make the two columns stack on top of each other instead of next to each other */
   border: solid;
   border-radius: 30px;
   font-size: 30px;
-  background-color:  rgb(136, 212, 120);;
+  background-color:  #379683;
   color: #fff;
   cursor: pointer;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
@@ -238,7 +243,7 @@ make the two columns stack on top of each other instead of next to each other */
   width: 66px;
   border-radius: 33px;
   font-size: 36px;
-  background-color: rgb(68, 170, 68);
+  background-color:#05386b;
 }
 
 #create-log:focus {
