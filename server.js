@@ -39,6 +39,7 @@ app.get('/og', function(req, res){
 });
 
 app.use(bodyParser.json());
+
 app.get('/', function(req, res, next){
   var entriesCollection=mongoDB.collection('entries');
   entriesCollection.find().toArray(function(err, entries){
