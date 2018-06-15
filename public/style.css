@@ -6,7 +6,7 @@
 body {
     font-family: Arial;
     padding: 20px;
-    background: #b90000;
+    background: rgb(182, 228, 173);
 }
 
 /* Header/Blog Title */
@@ -14,7 +14,7 @@ body {
     padding: 30px;
     font-size: 40px;
     text-align: center;
-    background: rgb(58, 240, 21);
+    background: #f1f1f1f1;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -30,10 +30,12 @@ body {
     float:right;
     width: 30%;
     padding-left: 35px;
-    background: blue;
-    /*padding-right: 75%;*/
+    background: #ddd;
+    margin: 2%;
+    padding-right: 35px;
 
 }
+
 
 
 /* Fake image */
@@ -50,7 +52,7 @@ body {
 }*/
 /* Add a card effect for articles */
 .card {
-     background-color: white;
+     background-color: #ddd;
      padding: 20px;
      margin-top: 20px;
   
@@ -221,7 +223,7 @@ make the two columns stack on top of each other instead of next to each other */
   border: solid;
   border-radius: 30px;
   font-size: 30px;
-  background-color: skyblue;
+  background-color:  rgb(136, 212, 120);;
   color: #fff;
   cursor: pointer;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
@@ -235,7 +237,7 @@ make the two columns stack on top of each other instead of next to each other */
   width: 66px;
   border-radius: 33px;
   font-size: 36px;
-  background-color: #3186f6;
+  background-color: rgb(68, 170, 68);
 }
 
 #create-log:focus {
