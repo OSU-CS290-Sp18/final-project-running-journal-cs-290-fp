@@ -164,7 +164,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 function deleteEntry(){
-    console.log("trying to delete ", event.target.parent);
+    console.log("event.target: ", event.target);
+    console.log("event.currentTarget: ", event.currentTarget);
+    console.log("event.srcElement: ", event.srcElement);
       var request = new XMLHttpRequest();
       request.open("POST", "/");
 }
