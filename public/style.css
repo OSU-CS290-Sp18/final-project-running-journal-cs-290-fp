@@ -6,7 +6,14 @@
 body {
     font-family: Arial;
     padding: 20px;
-    background: #5cdb95;
+    background-position: bottom 20px;
+    background:repeating-radial-gradient(
+      circle,
+      #5cdb95,
+      #5cdb95 10px,
+      #8ee4af 10px,
+      #8ee4af 20px
+      );
 }
 
 /* Header/Blog Title */
@@ -16,7 +23,7 @@ body {
     text-align: center;
     background: #379683;
     color:#05386b;
-    text-shadow: #333;
+    text-shadow: -1px 0 #5cdb95, 0 1px #5cdb95, 1px 0 #5cdb95, 0 -1px #5cdb95;
     border: solid;
     border-color: #05386b;
 }
@@ -73,7 +80,7 @@ body {
 /* Footer */
 .footer {
     padding: 20px;
-    text-align: center;
+    text-align: left;
     background: #65ccb8;
     margin-top: 20px;
     border:solid;
@@ -228,11 +235,16 @@ make the two columns stack on top of each other instead of next to each other */
 
 
 #create-log {
-  position: fixed;
-  right: 30px;
+  /*position: fixed;
+  left: 30px;
   bottom: 30px;
   height: 60px;
-  width: 60px;
+  width: 60px;*/
+  position: absolute;
+  left: 7%;
+  bottom: 63%;
+  width:60px;
+  height:60px;
   border: solid;
   border-radius: 30px;
   font-size: 30px;
@@ -244,8 +256,8 @@ make the two columns stack on top of each other instead of next to each other */
 
 #create-log:hover,
 #create-log:focus {
-  right: 27px;
-  bottom: 27px;
+  left: 6.8%;
+  bottom: 62.5%;
   height: 66px;
   width: 66px;
   border-radius: 33px;
@@ -255,4 +267,10 @@ make the two columns stack on top of each other instead of next to each other */
 
 #create-log:focus {
   outline: none;
+}
+
+.rightcard a{
+  color: black;
+  text-decoration: none;
+  text-decoration-color: none;
 }
