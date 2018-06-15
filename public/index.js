@@ -152,9 +152,22 @@ window.addEventListener('DOMContentLoaded', function () {
     modalAcceptButton.addEventListener('click', ModalAcceptClick);
   }
 
+  var entryDeleteButton = document.getElementsByClassName('delete-button');
+  if (entryDeleteButton) {
+      for(var i = 0; i < entryDeleteButton.length; i++){
+        entryDeleteButton[i].addEventListener('click', deleteEntry);
+      }
+    }
+
+
 });
 
 
+function deleteEntry(){
+    console.log("trying to delete ", event.target.parent);
+      var request = new XMLHttpRequest();
+      request.open("POST", "/");
+}
 
 //Developing a twit with handlebars
 
